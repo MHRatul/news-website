@@ -1,21 +1,17 @@
 import type { Metadata } from "next";
-import { Trispace, Geist, Geist_Mono } from "next/font/google";
+import { Trispace } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const trispace = Trispace({
   variable: "--font-trispace",
   subsets: ["latin"],
-});
+}); 
+
+
+
 
 export const metadata: Metadata = {
   title: "News-Site",
@@ -24,7 +20,7 @@ export const metadata: Metadata = {
     icon:[{url:'/img/logo (40 x 40 px).png', sizes:'40x40'}, {url:'/img/logo 16-16_px.png', sizes:'16x16'}],
     apple:{
       url:'/img/logo- 180-180.png',
-      sizes:'180x180'
+      sizes:'180 x 180'
     }
     },
     manifest:"/img/site.webmanifest",
@@ -44,10 +40,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={trispace.className}>
         <main className='px-2 md:px-20'>
-          {/* Header */}
-          {/* Navbar*/ }
+          <Header/>
+          <Navbar/>
           <section className="flex justify-between">
             {children}
             {/* RandomNews */}
