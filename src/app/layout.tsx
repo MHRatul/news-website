@@ -27,26 +27,32 @@ export const metadata: Metadata = {
       sizes:'180x180'
     }
     },
-    manifest:"/img/manifest.webmanifest",
+    manifest:"/img/site.webmanifest",
     openGraph:{
       title:'News-Site',
       description:'news for you where you can find what you need to know',
-      type:'website',
+      type:'article',
       authors:'MHRatul'
-    }
+    },
+    keywords:['news-site', 'news', 'news-for-you', 'news about everything'],
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <main className='px-2 md:px-20'>
+          {/* Header */}
+          {/* Navbar*/ }
+          <section className="flex justify-between">
+            {children}
+            {/* RandomNews */}
+          </section>
+        </main>
       </body>
     </html>
   );
