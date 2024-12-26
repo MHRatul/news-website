@@ -26,6 +26,8 @@ const Search = () => {
             setLoading(false)
             setNewsData (filterArticles)
 
+        }catch (error){
+            console.log(error)
         }
     }
     return()=>{
