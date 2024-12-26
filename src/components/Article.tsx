@@ -1,6 +1,7 @@
 import { news } from '@/types'
 import Image from 'next/image'
 import Link from 'next/link'
+import Tag from './Tag'
 
 const Article = ({data}:{data:news}) => {
   return (
@@ -16,8 +17,11 @@ const Article = ({data}:{data:news}) => {
           </a>
         </Link>
         <div className='flex space-x-4 my-2'>
-            {/* Tag */}
+            <Tag data='{data?.source.name}'/>
+            <Tag data='{data?.author}'/>
+            <Tag data='{new Date(data ?.publishedAt).toDateString()}'/>
         </div>
+        <p className='text-sm'>{data?.description}</p>
     </div>
   )
 }
