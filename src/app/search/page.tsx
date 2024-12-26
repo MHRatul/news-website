@@ -28,6 +28,9 @@ const Search = () => {
 
         }catch (error){
             console.log(error)
+            if(typeof error === 'object' && error !== null && 'message' in error){
+                console.log(error.message)
+            }
         }
     }
     return()=>{
