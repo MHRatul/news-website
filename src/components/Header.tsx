@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import SearchInput from './SearchInput'
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
             className='object-contain'/>
          </div>
         </Link>
-        {/* SearchInput */}
+        <SearchInput/>
     </div>
   )
 }
