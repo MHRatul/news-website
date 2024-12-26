@@ -3,9 +3,9 @@ import Article from '@/components/Article'
 import { removeDuplicateData } from '@/utils'
 
 
-const World = async () => {
-    const newsBusiness = await getNewsSearch('business')
-    const filterArticles = removeDuplicateData(newsBusiness)
+const Sports = async () => {
+    const newsSports = await getNewsSearch('sports')
+    const filterArticles = removeDuplicateData(newsSports)
   return (
     <div className='w-[700px]'>
         {filterArticles.map((article,idx) =>(
@@ -17,4 +17,4 @@ const World = async () => {
   )
 }
 
-export default World
+export default Sports

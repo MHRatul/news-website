@@ -2,6 +2,7 @@ import { getNewsSearch } from '@/api'
 import { removeDuplicateData } from '@/utils'
 import RandomArticle from './RandomArticle'
 
+
 const RandomNews = async () => {
     const randomNews = await getNewsSearch("random news")
     const filterArticles = removeDuplicateData(randomNews)
