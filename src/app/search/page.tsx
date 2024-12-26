@@ -11,14 +11,22 @@ const Search = () => {
   const search = searchParams ? searchParams.get('q') : null
 
   useEffect(() => {
+    const controller = new AbortController()
+    const signal = controller.signal
     const getNews = async () => {
-      const response = await fetch(`https://newsapi.org/v2/ecerything?
-        apiKey=${process.env.NEXT_PUBLIC_API_TOKEN_NEWS}&q=${search}&
-        pageSize=10`,{cache: 'no-store'})
-        const responseToJson = await response.json()
-        const randomArticle:news[] = responseToJson?.articles
-        const filterArticles = randomArticle.filter(article => article?.
-        source?.id !== null)
+        try{
+            setLoading(true)
+            const response = await fetch(`https://newsapi.org/v2/ecerything?
+            apiKey=${process.env.NEXT_PUBLIC_API_TOKEN_NEWS}&q=${search}&
+            pageSize=10`,{cache: 'no-store'})
+            const responseToJson = await response.json()
+            const randomArticle:news[] = responseToJson?.articles
+            const filterArticles = randomArticle.filter(article => article?.
+            source?.id !== null)
+            setLoading(false)
+            setNewsData (filterArticles)
+
+        }
     }
     return()=>{
     }
