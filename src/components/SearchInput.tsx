@@ -8,7 +8,7 @@ const SearchInput = () => {
   const [keywords, setKeywords] = useState<string>('')
   const router = useRouter()
 
-  const searchKeyword = (e:FormEvent) => {
+  const searchKeywords = (e:FormEvent) => {
     e.preventDefault()
     if (!keywords){
         router.push("/")
@@ -18,7 +18,7 @@ const SearchInput = () => {
 
   }
   return (
-    <form className="flex space-x-2 items-center" onSubmit={searchKeyword}>
+    <form className="flex space-x-2 items-center" onSubmit={searchKeywords}>
       <input type="text" placeholder='Search' value={keywords} className="text-sm px-2 py-1 outline-none border border-black"
        onChange={(e) => setKeywords(e.target.value)}/>
        <button type="submit">

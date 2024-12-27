@@ -3,7 +3,7 @@ import Article from '@/components/Article'
 import { removeDuplicateData } from '@/utils'
 
 
-const World = async () => {
+const Business= async () => {
     const newsBusiness = await getNewsSearch('business')
     const filterArticles = removeDuplicateData(newsBusiness)
   return (
@@ -17,4 +17,4 @@ const World = async () => {
   )
 }
 
-export default World
+export default Business

@@ -11,7 +11,7 @@ const Navbar = () => {
             <Link href="/science">Science</Link>
             <Link href="/health">Health</Link>
             <Link href="/sports">Sports</Link>
-            <Link href="/books">Books</Link>
+            <Link href="/book">Books</Link>
             <Link href="/lifestyle">Lifestyle</Link>
             <Link href="/food">Food</Link>
             <Link href="/travel">Travel</Link>

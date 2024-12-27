@@ -9,7 +9,7 @@ const Article = ({data}:{data:news}) => {
         <div className='relative w-full h-[300px]'>
             <Image src={`${data?.urlToImage !== null ? data?.urlToImage : '/img/logo (1000 x 200 px).png'}`}
              alt={data?.title} fill sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw, 100vw'
-             className= 'object-cover'/>
+             className= 'object-cover' />
         </div>
         <Link href={data?.url} legacyBehavior>
           <a target="_blank" className='font-bold text-lg'>

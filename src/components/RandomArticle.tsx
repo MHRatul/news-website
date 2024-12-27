@@ -14,12 +14,12 @@ const RandomArticle = ({data}:{data:news}) => {
             </a>
             </Link>
 
-       <div className='flex flex-col space-y-2 max-w-max my-2'>
+       <div className='flex flex-col space-y-2 max-w my-2'>
             <Tag data={data?.source.name}/>
             <Tag data={new Date(data?.publishedAt).toDateString()}/>
        </div>
       </div>
-      <div className='reletive w-[400px] h-[200px]'>
+      <div className='relative w-[400px] h-[200px]'>
         <Image src={`${data?.urlToImage !== null ? data?.urlToImage : '/img/logo (1000 x 200 px).png'}`} alt={data?.title}
          fill  className='object-cover'/>
       </div>
