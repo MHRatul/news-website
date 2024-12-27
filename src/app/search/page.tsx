@@ -17,9 +17,7 @@ const Search = () => {
     const getNews = async () => {
         try{
             setLoading(true)
-            const response = await fetch(`https://newsapi.org/v2/everything?
-            apiKey=${process.env.NEXT_PUBLIC_API_TOKEN_NEWS}&q=${search}&
-            pageSize=10`,{signal})
+            const response = await fetch(`https://newsapi.org/v2/everything?apiKey=${process.env.NEXT_PUBLIC_API_TOKEN_NEWS}&q=${search}&pageSize=10`,{signal})
             const responseToJson = await response.json()
             const randomArticle:news[] = responseToJson?.articles
             const filterArticles = randomArticle.filter(article => article?.
