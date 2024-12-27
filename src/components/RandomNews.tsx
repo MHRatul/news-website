@@ -23,6 +23,7 @@ try{
     console.error("Error fetching random news:", error);
     return <div>Error loading news. Please try again later.</div>;
   }
+
 }
 
 

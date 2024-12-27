@@ -17,3 +17,14 @@ export const getNewsSearch= async(keyword: string) => {
 
     return newsData.json()
 }
+
+export async function getServerSideProps() {
+    try {
+      const res = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_API_TOKEN_NEWS}`);
+      const data = await res.json();
+      return { props: { data } };
+    } catch (error) {
+      console.error("Error in getServerSideProps:", error);
+      return { props: { data: [] } }; // Return fallback data
+    }
+  }
