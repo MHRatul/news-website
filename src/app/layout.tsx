@@ -37,9 +37,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
+
     <html lang="en">
       <body className={trispace.className}>
         <main className='px-2 md:px-20'>

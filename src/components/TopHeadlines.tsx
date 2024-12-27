@@ -8,7 +8,7 @@ const TopHeadlines = async() => {
   return (
     <div className='w-[700px]'>
         {filterArticles.map((article,idx) =>(
-          <div key={`${article.title}-${idx}`}>
+          <div key={`${article?.title}-${idx}`}>
             <Article data={article}/>
           </div>
         ))}

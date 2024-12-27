@@ -1,5 +1,6 @@
 "use client"
 
+import Article from '@/components/Article'
 import { news } from '@/types'
 import { useSearchParams } from 'next/navigation'
 import { useState, useEffect} from 'react'
@@ -16,30 +17,48 @@ const Search = () => {
     const getNews = async () => {
         try{
             setLoading(true)
-            const response = await fetch(`https://newsapi.org/v2/ecerything?
+            const response = await fetch(`https://newsapi.org/v2/everything?
             apiKey=${process.env.NEXT_PUBLIC_API_TOKEN_NEWS}&q=${search}&
-            pageSize=10`,{cache: 'no-store'})
+            pageSize=10`,{signal})
             const responseToJson = await response.json()
             const randomArticle:news[] = responseToJson?.articles
             const filterArticles = randomArticle.filter(article => article?.
-            source?.id !== null)
+            source.id !== null)
             setLoading(false)
             setNewsData (filterArticles)
 
         }catch (error){
             console.log(error)
             if(typeof error === 'object' && error !== null && 'message' in error){
-                console.log(error.message)
+                console.log(error.toString())
+            } else{
+                console.log('Unexpected error ' , error)
             }
         }
     }
+
+    getNews()
+
     return()=>{
+        controller.abort()
     }
   }, [search])
 
 
   return (
-    <div>Search</div>
+    <div className='w-[700px]'>
+        {loading ? (
+            <p>loading...</p>
+        ) : (
+            <>
+            {newsData.map((article:news, idx:number) =>(
+                <div key={`${article?.title}-${idx}`}>
+                    <Article data={article}/>
+                </div>
+            ))}
+            </>
+        )}
+    </div>
   )
 }
 

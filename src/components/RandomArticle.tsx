@@ -21,7 +21,7 @@ const RandomArticle = ({data}:{data:news}) => {
       </div>
       <div className='reletive w-[400px] h-[200px]'>
         <Image src={`${data?.urlToImage !== null ? data?.urlToImage : '/img/logo (1000 x 200 px).png'}`} alt={data?.title}
-         fill sizes='(max-width: 768px) 50vw, (max-width: 1200px) 100vw, 100vw' className='object-cover'/>
+         fill  className='object-cover'/>
       </div>
     </div>
   )

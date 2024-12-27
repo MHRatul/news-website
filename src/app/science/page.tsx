@@ -9,7 +9,7 @@ const Science = async () => {
   return (
     <div className='w-[700px]'>
         {filterArticles.map((article,idx) =>(
-            <div key={`${article?.title}-${idx}`} className='mb-4 '>
+            <div key={`${article?.title}-${idx}`}>
                 <Article data={article}/>
             </div>
         ))}
