@@ -4,7 +4,7 @@ import RandomArticle from './RandomArticle'
 
 
 const RandomNews = async () => {
-
+try{
     const randomNews = await getNewsSearch("random news")
     const filterArticles = removeDuplicateData(randomNews)
 
@@ -19,5 +19,11 @@ const RandomNews = async () => {
     </div>
   )
 }
+  catch (error) {
+    console.error("Error fetching random news:", error);
+    return <div>Error loading news. Please try again later.</div>;
+  }
+}
+
 
 export default RandomNews
